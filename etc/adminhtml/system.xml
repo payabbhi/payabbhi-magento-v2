@@ -1,0 +1,69 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="payment">
+            <group id="payabbhi" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label><![CDATA[Payabbhi (Card / NetBanking / Wallet)]]></label>
+                <comment>
+                    <![CDATA[<a href="https://payabbhi.com/portal/keys" target="_blank">Click here to get keys of Payabbhi account</a>]]>
+                </comment>
+                <field id="active" translate="label" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>payment/payabbhi/active</config_path>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                    <config_path>payment/payabbhi/title</config_path>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="merchant_name_override" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Merchant Name</label>
+                    <config_path>payment/payabbhi/merchant_name_override</config_path>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="access_id" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Access ID</label>
+                    <comment>Access ID is available as part of API keys downloaded from the Portal</comment>
+                    <config_path>payment/payabbhi/access_id</config_path>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="secret_key" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Secret Key</label>
+                    <comment>Secret Key is available as part of API keys downloaded from the Portal</comment>
+                    <config_path>payment/payabbhi/secret_key</config_path>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="payment_auto_capture" translate="label" type="select" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Payment Auto Capture</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>
+                      <![CDATA[Specify whether the payment should be captured automatically. Refer to <a href="https://payabbhi.com/docs/api/" target="_blank">Payabbhi API Reference</a>]]>
+                    </comment>
+                    <config_path>payment/payabbhi/payment_auto_capture</config_path>
+                </field>
+                <field id="order_status" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>New Order Status</label>
+                    <source_model>Magento\Sales\Model\Config\Source\Order\Status\Processing</source_model>
+                    <comment>The status of the order to be marked on completion of payment.</comment>
+                    <config_path>payment/payabbhi/order_status</config_path>
+                </field>
+                <field id="allowspecific" translate="label" type="allowspecific" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Payment from Applicable Countries</label>
+                    <source_model>Magento\Payment\Model\Config\Source\Allspecificcountries</source_model>
+                    <config_path>payment/payabbhi/allowspecific</config_path>
+                </field>
+                <field id="specificcountry" translate="label" type="multiselect" sortOrder="51" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Payment from Specific Countries</label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                    <can_be_empty>1</can_be_empty>
+                    <config_path>payment/payabbhi/specificcountry</config_path>
+                </field>
+                <field id="sort_order" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Sort Order</label>
+                    <config_path>payment/payabbhi/sort_order</config_path>
+                    <validate>validate-number</validate>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

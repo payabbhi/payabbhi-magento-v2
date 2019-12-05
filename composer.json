@@ -1,0 +1,39 @@
+{
+  "name": "payabbhi/payabbhi-magento-v2",
+  "description": "Payabbhi Magento 2.0 plugin for accepting payments.",
+  "require": {
+    "php": ">=5.5.0",
+    "payabbhi/payabbhi-php": "*"
+  },
+  "keywords": [
+    "payabbhi",
+    "magento",
+    "payments",
+    "india",
+    "payment gateway",
+    "wallets",
+    "netbanking"
+  ],
+  "authors": [
+    {
+      "name": "Team Payabbhi"
+    }
+  ],
+  "support": {
+    "email": "contact@payabbhi.com",
+    "issues": "https://github.com/payabbhi/payabbhi-magento-v2/issues",
+    "docs": "https://payabbhi.com/docs/"
+  },
+  "homepage": "https://payabbhi.com",
+  "suggest": {
+    "magento/module-checkout-agreements": "100.0.*"
+  },
+  "type": "magento2-module",
+  "license": ["MIT"],
+  "autoload": {
+    "files": ["registration.php"],
+    "psr-4": {
+      "Payabbhi\\Magento\\": ""
+    }
+  }
+}

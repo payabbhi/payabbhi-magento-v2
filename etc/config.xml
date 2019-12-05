@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <payment>
+            <payabbhi>
+                <model>Payabbhi\Magento\Model\PaymentMethod</model>
+                <title>Payabbhi (Card / NetBanking / Wallet)</title>
+                <merchant_name_override>Magento</merchant_name_override>
+                <payment_action>authorize_capture</payment_action>
+                <active>0</active>
+                <order_status>processing</order_status>
+                <access_id></access_id>
+                <secret_key></secret_key>
+                <payment_auto_capture>1</payment_auto_capture>
+            </payabbhi>
+        </payment>
+    </default>
+</config>
